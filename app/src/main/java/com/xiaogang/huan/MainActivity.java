@@ -19,14 +19,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-
 public class MainActivity extends AppCompatActivity {
     private TypeTextView mTypeTextView;
     private ScrollView scrollView;
     private Banner mbanner;
     private VideoView main_videoview;
     private List<String> picurl = new ArrayList<>();
-    private   String TEST_DATA = " //自从看到你之后就爱上了单纯的你/\n" +
+    private String TEST_DATA = " //自从看到你之后就爱上了单纯的你/\n" +
             "        long love = 0;\n" +
             "        //时光在增加，爱你的心也在升温/\n" +
             "        for (long time = 1 ; time<love ; ++love, ++time){\n" +
@@ -47,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
+
         picurl.add("http://onfkdy4l9.bkt.clouddn.com/IMG_20170820_165757%281%29.jpg");
         picurl.add("http://onfkdy4l9.bkt.clouddn.com/IMG_20171020_155709%281%29.jpg");
         picurl.add("http://onfkdy4l9.bkt.clouddn.com/IMG_20170227_170446.jpg");
@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         picurl.add("http://onfkdy4l9.bkt.clouddn.com/IMG_20161231_170658_01.jpg");
 
         main_videoview = (VideoView) findViewById(R.id.main_videoview);
-        main_videoview.setVideoURI(Uri.parse("android.resource://com.xiaogang.huan/"+R.raw.gaobai));
+        main_videoview.setVideoURI(Uri.parse("android.resource://com.xiaogang.huan/" + R.raw.gaobai));
         main_videoview.start();
         main_videoview.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
@@ -79,22 +79,24 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("", "onTypeOver");
             }
         });
-        mTypeTextView.start(scrollView,TEST_DATA);
+        mTypeTextView.start(scrollView, TEST_DATA);
+
 
         mbanner = (Banner) findViewById(R.id.mBanner);
         mbanner.setBannerStyle(BannerConfig.NOT_INDICATOR);
+
         LinearLayout.LayoutParams bannerparams = new LinearLayout.LayoutParams(Gallery.LayoutParams.MATCH_PARENT,
-                 Gallery.LayoutParams.WRAP_CONTENT);
+                Gallery.LayoutParams.WRAP_CONTENT);
         bannerparams.height = ScreenUtil.getWith(this);
         mbanner.setLayoutParams(bannerparams);
+
+
         if (picurl.size() > 0) {
             mbanner.setImages(picurl)
                     .setImageLoader(new GlideImageLoader())
                     .setDelayTime(3000)
                     .start();
         }
-
-
 
     }
 
@@ -111,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onRestart() {
         super.onRestart();
         main_videoview.start();
-        mTypeTextView.start(scrollView,TEST_DATA);
+        mTypeTextView.start(scrollView, TEST_DATA);
     }
 
 }
