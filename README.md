@@ -4,7 +4,7 @@
 
 520 表白神器 自动打字 View
 
+<img width="320" height=“480” src="http://onfkdy4l9.bkt.clouddn.com/Screenshot_2018-05-22-21-42-45-009_%E7%9B%B8%E5%86%8C.png"></img>
 
-![](http://onfkdy4l9.bkt.clouddn.com/Screenshot_2018-05-22-21-42-45-009_%E7%9B%B8%E5%86%8C.png)
 
 - 其实，我蛮喜欢这个的
